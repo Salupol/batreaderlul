@@ -10,12 +10,12 @@ try:
         y += power
         print(f"[{timestamp}] - power consume: {power}W")
         if y > 1000:
-            print(f"total power consumed: {y/1000}kW")
+            print(f"total power consumed: {round(y/1000, 2)}kW")
         else:
-            print(f"total power consumed: {y}W")
-        print(f"average power consumption: {(y/(i+1))} W\n")
+            print(f"total power consumed: {round(y, 2)}W")
+        print(f"average power consumption: {round((y/(i+1)), 2)} W\n")
         time.sleep(3)
 except KeyboardInterrupt:
     print("Interrupted by user")
-    open("log.txt", "a").write(f"[{timestamp}] - average power consumption: {(y/(i+1))} W\n")
+    open("log.txt", "a").write(f"[{timestamp}] - average power consumption: {round((y/(i+1)), 2)} W\n")
 x.close()
