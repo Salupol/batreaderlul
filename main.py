@@ -2,9 +2,9 @@ import time
 import datetime
 x = open("/sys/class/power_supply/BAT0/power_now", "r")
 y = 0
-timestamp = datetime.datetime.now().strftime("%d-%m-%y %H:%M:%S")
 try:
     for i in range(1000):
+        timestamp = datetime.datetime.now().strftime("%d-%m-%y %H:%M:%S")
         x.seek(0)
         power = int(x.read())/1000000
         y += power
